@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    /* font-family: Short Stack, 'cursive'; */
+}
+.container{
+    height:950px;
+    
+    /* border: 2px solid black; */
+    /* background: rgb(227, 248, 252); */
+    /* background:url(https://66.media.tumblr.com/3966b51da2d941f0c01a907f190ebcb9/tumblr_nqx8hsjuCl1tubinno1_1280.jpg); */
+    /* background:url(https://66.media.tumblr.com/c877dd269d1ac1dab597ca3d927e97f6/tumblr_nqx8pj7h531tubinno1_1280.jpg); */
+    background:url(https://66.media.tumblr.com/c877dd269d1ac1dab597ca3d927e97f6/tumblr_nqx8pj7h531tubinno1_1280.jpg);
+    background-size: cover;
+     
+}
+
+.topnav {
+    /* overflow: hidden; */
+    /* border: 2px solid black; */
+    height:5%;
+    padding: 2%;
+    background: rgb(115, 168, 247);
+    text-align: center;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    text-decoration: none;
+    background-color: #ddd;
+    color: black;
+}
+
+.mainScreen{
+    height: 70%;
+    text-align: center;
+}
+
+  .projectDescreptionInput{
+      border: 2px solid black;
+      border-radius: 15px;
+      width: 80%;
+      height: 50%;
+      margin: 5%;
+      padding: 15px;
+      font-size: 15px;
+    }
+    .formContainer{
+        
+        width: 60%;
+        margin: auto;
+        margin-top: 5%;
+        border-left: 2px solid white;
+        border-right: 2px solid gray;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid white;
+        background:url(https://66.media.tumblr.com/3966b51da2d941f0c01a907f190ebcb9/tumblr_nqx8hsjuCl1tubinno1_1280.jpg);
+        /* opacity: 0.3; */
+        /* background-size: cover; */
+        /* background-repeat: no-repeat; */
+        font-size: 15px;
+        font-family: 'Source Sans Pro', sans-serif;;
+    }
+    
+    .actorsInput{
+        font-family: 'Source Sans Pro', sans-serif;
+        border-radius:10px ;
+        border-left: 2px solid white;
+        border-right: 2px solid gray ;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid  white;
+        padding: 2px;
+        padding-left: 10px;
+        height: 35px;
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        /* border: 2px solid black; */
+    }
+    .actorDescription{
+        font-family: 'Source Sans Pro', sans-serif;
+        color: black;
+        border-left: 2px solid white;
+        border-right: 2px solid gray ;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid  white;
+     border-radius:15px ;
+    padding: 10px;
+     max-width: 80%;
+     min-width: 80%;
+     max-height: 80px;
+     min-height: 80px;
+     overflow: auto;
+     background: white;
+     
+     
+  }
+  textarea:focus{
+    -webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+    -moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+    box-shadow:         0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+  }
+  
+ input:focus{
+    -webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+    -moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+    box-shadow:         0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+  }
+  
+    .showActors{
+        background: rgba(187, 223, 243, 0.93);
+        border-left: 2px solid white;
+    border-right: 2px solid gray ;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid  white;
+        margin: auto;
+        width: 85%;
+        margin-bottom: 5%;
+        height: 200px;
+        overflow: auto;
+        border-radius:10px;
+  }
+  
+#actorView{
+    margin: auto;
+    width: 90%;
+    padding: 5px;
+    text-align: left;
+    border-bottom: 2px solid white;
+}
+
+  
+   #submit_btn{
+      border-radius:5px;
+      background:rgb(115, 168, 247);
+      color: white;
+      height: 35px;
+      width: 30%;
+      margin: 5%;
+  }
+
+
+.userStoryContainer{
+    margin: auto;
+    margin-top: 5%;
+    border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid white;
+    background:url(https://66.media.tumblr.com/3966b51da2d941f0c01a907f190ebcb9/tumblr_nqx8hsjuCl1tubinno1_1280.jpg);
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    min-height: 720px;
+    width: 60%;
+    font-size: 15px;
+}
+
+.addUserStory{
+    margin: 5px;
+    margin: auto;
+    width: 80%;
+    margin-top: 5%;
+    /* border: 2px solid #a3c9fa; */
+    /* border-radius: 10px; */
+    /* background:#a3c9fa ; */
+}
+.addUserStory .addUserStoryActor{
+    
+    margin: auto;
+    border: 1px solid gray;
+    border-radius:15px ;
+    background: white;
+    border-radius:10px ;
+    padding: 2px;
+    padding-left: 10px;
+    height: 35px;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.addUserStory .SingleUserStory{
+    /* border: 2px solid black;  */
+    border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid white;
+    
+    margin: auto;
+    border-radius:15px ;
+    padding: 10px;
+     max-width: 80%;
+     min-width: 80%;
+     max-height: 80px;
+     min-height: 80px;
+     overflow: auto;
+     /* background: rgb(217, 233, 189); */
+     
+    }
+    
+    .addUserStory .viewUserStory{
+        /* margin: auto;
+        background: rgb(225, 240, 200);
+        border-radius:10px ;
+        padding: 2px;
+        padding-left: 10px;
+        height: 35px;
+        width: 80%;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    border: 2px solid rgb(115, 168, 247); */
+    background: rgba(187, 223, 243, 0.93);
+    border-left: 2px solid white;
+border-right: 2px solid gray ;
+border-top: 2px solid gray;
+border-bottom: 2px solid  white;
+    margin: auto;
+    width: 85%;
+    margin-bottom: 5%;
+    height: auto;
+    overflow: auto;
+    border-radius:10px;
+}
+
+  .footer{
+      /* height: 10%; */
+      /* background-color: rgb(115, 168, 247); */
+     
+  }
+
+
+ 
+
