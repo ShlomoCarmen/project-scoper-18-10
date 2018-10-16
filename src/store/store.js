@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import { sendActor, getActors, getAllData, deleteActor, getProjects, rejectionExplenation, createNewVersion, projectDescription ,sendUserStory, editActor} from '../axios/axios'
+import { sendActor, getActors, getAllData, deleteActor, getProjects, rejectionExplenation, createNewVersion, projectDescription, sendUserStory, editActor ,deleteUserStory} from '../axios/axios'
 
 
 var mainState = {
@@ -52,55 +52,49 @@ var reduser = function (state, action) {
             break;
         case "UPDATA_CORRECT_PROJECT_ID":
             newState.correctProject = action.payload;
-            console.log(action.payload);
-
             return newState;
             break;
-
         case "GET_ACTORS_DB":
             getActors(newState.correctProject);
             return newState;
             break;
         case "UPDATE_STATE_ACTORS":
-            console.log(action.payload);
             newState.actorsArray = action.payload;
-            console.log(newState);
             return newState;
             break;
-
         case "GET_ALL_DATA":
             getAllData(newState.correctProject);
             return newState;
             break;
-
         case "UPDATE_STATE":
-            console.log(action.payload);
             newState.projectDescription = action.payload.projectDescription;
             newState.actorsArray = action.payload.allActors;
-            console.log(newState);
             return newState;
             break;
-
         case "DELETE_ACTOR":
             deleteActor(newState.correctProject, action.payload);
             return newState;
             break;
         case "EDIT_ACTOR":
-            console.log(action.payload);
-            
             editActor(newState.correctProject, action.payload);
             return newState;
             break;
-
         case "ADD_USER_STORY":
-        sendUserStory(newState.correctProject, action.payload.indexOfActor, action.payload.userStory);
+            sendUserStory(newState.correctProject, action.payload.indexOfActor, action.payload.userStory);
             return newState
+            break;
+        case "DELETE_USER_STORY":
+            deleteUserStory(newState.correctProject, action.payload);
+            return newState;
+            break;
+        case "EDIT_USER_STORY":
+            // editActor(newState.correctProject, action.payload);
+            return newState;
             break;
         default:
             return newState;
             break;
     }
-    // return newState;
 }
 
 var store = createStore(reduser, mainState)

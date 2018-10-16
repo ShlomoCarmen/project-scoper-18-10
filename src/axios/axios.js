@@ -8,7 +8,6 @@ export var rejectionExplenation = (correctProject, rejectionExplenation) => {
     
     axios.put(`rejection/${correctProject}`, {rejectionExplenation})
     .then(function (res) {
-        // store.dispatch({type: 'GET_ACTORS_DB'});
         console.log(res);
     });
 }
@@ -37,8 +36,6 @@ export var sendActor = (actor, correctProject) => {
     });
 }
 export var sendUserStory = (correctProject, indexOfActor, userStory) => {
-        console.log(indexOfActor, userStory);
-    
     axios.put(`/userStoreis/${correctProject}/${indexOfActor}`,  {userStory})
     .then(function (res) {
         store.dispatch({type: 'GET_ACTORS_DB'});
@@ -46,6 +43,13 @@ export var sendUserStory = (correctProject, indexOfActor, userStory) => {
     });
 }
 
+export var deleteUserStory = (correctProject, userStory) => {
+    axios.delete(`${urlLinks.deleteUserStory}/${correctProject}/${userStory.indexOfActor}/${userStory.storyLocation}`)
+    .then(function(res) {
+        console.log(res);
+        store.dispatch({type: 'GET_ACTORS_DB'});
+    });
+}
 export var getActors = (correctProject) => {
     axios.get(`${urlLinks.getActors}/${correctProject}`)
     .then(function(response) {

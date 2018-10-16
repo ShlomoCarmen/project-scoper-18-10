@@ -30,9 +30,8 @@ class AddUserStories extends Component {
                     return <div className='addUserStory' key={i} >
                         <div className='addUserStoryActor' onClick={() => {
                             console.log(i);
-                            
-                             this.displayInput(elm) 
-                             }}>{elm.actorName}</div>
+                            this.displayInput(elm)
+                        }}>{elm.actorName}</div>
                         {this.state[elm._id].showInput ? <AddUserStory actor={elm} indexOfActor={i} /> : null}
                     </div>
                 })}
@@ -52,8 +51,8 @@ class AddUserStory extends Component {
     render() {
         return (
             <div className='userStoryInput'>
-                
-                <ShowAllUserStory userStoreis={this.props.actor.userStoreis} />
+
+                <ShowAllUserStory userStoreis={this.props.actor.userStoreis} indexOfActor={this.props.indexOfActor}/>
                 <textarea onChange={(e) => { this.setState({ input: e.target.value }) }} value={this.state.input}></textarea>
                 <button onClick={() => {
                     store.dispatch({
@@ -63,7 +62,7 @@ class AddUserStory extends Component {
                             userStory: this.state.input
                         }
                     })
-                    this.setState({ input: `As a ${this.props.actor.actorName}: `});
+                    this.setState({ input: `As a ${this.props.actor.actorName}: ` });
                 }}>save</button>
             </div>
         )
@@ -74,8 +73,11 @@ class ShowAllUserStory extends Component {
     render() {
         return (
             <div>
-                {this.props.userStoreis.map((elm, i) => {
-                    return <div className='viewUserStory' key={i}>{elm}</div>
+                {this.props.userStoreis.map((elm, index) => {
+                    return <div className='viewUserStory' key={index}>
+                        <h4>{elm}</h4>
+                        <button onClick={()=>{store.dispatch({type: 'DELETE_USER_STORY', payload: {indexOfActor: this.props.indexOfActor, storyLocation: index}})}}>Delete</button>
+                    </div>
                 })}
             </div>
         )
