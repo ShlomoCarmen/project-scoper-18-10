@@ -61,8 +61,8 @@ class AddActors extends Component {
                     }}
                 />
                 <br />
-                {this.state.editMonde ? null : <button id="submit_btn" onClick={this.saveData}>Add</button>}
-                {this.state.editMonde ? <button id="submit_btn" onClick={this.editActor}>Edit</button> : null}
+                {this.state.editMonde ? null : <button className='saveBtn' onClick={this.saveData}>Add</button>}
+                {this.state.editMonde ? <button className='editBtn' onClick={this.editActor}>Edit</button> : null}
                 {/* <button id="submit_btn" onClick={this.saveData}>Add</button> */}
                 <div className='showActors'>
                     

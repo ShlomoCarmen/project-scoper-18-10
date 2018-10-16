@@ -25,7 +25,7 @@ class AddUserStories extends Component {
     }
     render() {
         return (
-            <div className='userStoryContainer'>
+            <div className='formContainer'>
                 {this.props.actorsArray.map((elm, i) => {
                     return <div className='addUserStory' key={i} >
                         <div className='addUserStoryActor' onClick={() => {
@@ -54,7 +54,7 @@ class AddUserStory extends Component {
 
                 <ShowAllUserStory userStoreis={this.props.actor.userStoreis} indexOfActor={this.props.indexOfActor}/>
                 <textarea onChange={(e) => { this.setState({ input: e.target.value }) }} value={this.state.input}></textarea>
-                <button onClick={() => {
+                <button className="saveBtn" onClick={() => {
                     store.dispatch({
                         type: 'ADD_USER_STORY', payload: {
                             indexOfActor: this.props.indexOfActor,

@@ -6,11 +6,8 @@ import store from '../store/store';
 class AddProjectDescription extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
-    
     this.state = {
       projectDescription: this.props.projectDescription
-      // projectDescription: ''
     }
   }
   render() {
@@ -18,7 +15,7 @@ class AddProjectDescription extends Component {
       <div className='formContainer' >
         <textarea className="projectDescreptionInput" placeholder='Project DescreptionInput' value={this.state.projectDescription}
          onChange={e => { this.setState({ projectDescription: e.target.value })}}></textarea>
-        <button  id="submit_btn"onClick={() => store.dispatch({ type: 'PROJECT_DESCREPTION', payload: this.state.projectDescription })}>Save</button>
+        <button className="saveBtn" onClick={() => store.dispatch({ type: 'PROJECT_DESCREPTION', payload: this.state.projectDescription })}>Save</button>
       </div>
     );
 
