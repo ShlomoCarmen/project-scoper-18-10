@@ -15,10 +15,10 @@ class AddProjectDescription extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='formContainer' >
         <textarea className="projectDescreptionInput" placeholder='Project DescreptionInput' value={this.state.projectDescription}
          onChange={e => { this.setState({ projectDescription: e.target.value })}}></textarea>
-        <button onClick={() => store.dispatch({ type: 'PROJECT_DESCREPTION', payload: this.state.projectDescription })}>Save</button>
+        <button  id="submit_btn"onClick={() => store.dispatch({ type: 'PROJECT_DESCREPTION', payload: this.state.projectDescription })}>Save</button>
       </div>
     );
 

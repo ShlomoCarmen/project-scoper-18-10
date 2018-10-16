@@ -20,7 +20,8 @@ export const urlLinks = {
     getActors: mainURL + '/allActors',
     deleteActor: mainURL + '/actor/',
     editActor: mainURL + '/editActor',
-    getProjects: mainURL + '/allProjects'
+    getProjects: mainURL + '/allProjects',
+    deleteUserStory: mainURL + '/userStoreis',
 }
 
 
