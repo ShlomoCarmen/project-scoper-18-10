@@ -1,77 +1,138 @@
-body {
-    margin: 0;
-    /* font-family: Short Stack, 'cursive'; */
-}
-.container{
-    height:950px;
-    
-    /* border: 2px solid black; */
-    /* background: rgb(227, 248, 252); */
-    /* background:url(https://66.media.tumblr.com/3966b51da2d941f0c01a907f190ebcb9/tumblr_nqx8hsjuCl1tubinno1_1280.jpg); */
-    /* background:url(https://66.media.tumblr.com/c877dd269d1ac1dab597ca3d927e97f6/tumblr_nqx8pj7h531tubinno1_1280.jpg); */
+.maincContainer{
+    margin: 0px;
+    padding: 15px;
     background:url(data:image/jpeg;base64,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);
     background-size: cover;
-     
 }
 
-.topnav {
-    /* overflow: hidden; */
-    /* border: 2px solid black; */
-    height:5%;
+.header{
+    /* border: 2px black solid; */
+    height: 50px;
+    padding: 5px;
+    font-weight: bold;
+    color: rgb(199, 209, 219);
+    /* width: 100%; */
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* font-size: 25px; */
+    /* font-weight: bold; */
+}
+
+
+.articleFirst{
+    text-transform: uppercase;
+    /* background: rgb(42, 94, 190); */
+    background: -moz-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: -webkit-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: -o-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: -ms-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: linear-gradient(137deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+}
+
+.navBar {
     padding: 2%;
-    background: rgb(115, 168, 247);
     text-align: center;
 }
 
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
+.navBar a {
+    text-decoration: none;
+    color: #89ceee;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
 }
 
-.topnav a:hover {
+.navBar a:hover {
     text-decoration: none;
-    background-color: #ddd;
-    color: black;
+    background-color: rgba(221, 221, 221, 0.24);
+    color: rgb(197, 184, 184);
 }
 
-.mainScreen{
-    height: 70%;
+.articleSecond{
     text-align: center;
+    height: 700px;
+    border-bottom: 5px rgb(224, 221, 221) solid;
+    overflow: auto;
 }
+.mainScreen{
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.footer{
+    height: 80px;
+}
+
+
+
+
+
+
+/* ////////////////////////////////////// */
+/* buttons */
+
+.saveBtn{
+    border-radius:5px;
+    background:rgb(115, 168, 247);
+    color: white;
+    height: 35px;
+    width: 30%;
+    margin: 20px;
+}
+
+.editBtn{
+    border-radius:5px;
+    background:rgb(122, 226, 122);
+    color: white;
+    height: 35px;
+    width: 30%;
+    margin: 20px;
+}
+
+.deleteBtn{
+    border-radius:5px;
+    background:rgb(255, 107, 107);
+    color: white;
+    height: 35px;
+    width: 30%;
+    margin: 20px;
+}
+
+/* ////////////////////////////////////// */
+/* form */
+
+.formContainer{
+    min-height: 400px;
+    width: 60%;
+    margin: auto;
+    border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid white;
+    background: rgba(143, 205, 241, 0.418);
+    /* opacity: 0.3; */
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;;
+}
+
 
   .projectDescreptionInput{
-      border: 2px solid black;
-      border-radius: 15px;
+    border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid white;
+      border-radius: 10px;
       width: 80%;
-      height: 50%;
-      margin: 5%;
+      height: 200px;
+      margin: 20px;
       padding: 15px;
       font-size: 15px;
     }
-    .formContainer{
-        
-        width: 60%;
-        margin: auto;
-        margin-top: 5%;
-        border-left: 2px solid white;
-        border-right: 2px solid gray;
-        border-top: 2px solid gray;
-        border-bottom: 2px solid white;
-        background:url(https://66.media.tumblr.com/3966b51da2d941f0c01a907f190ebcb9/tumblr_nqx8hsjuCl1tubinno1_1280.jpg);
-        /* opacity: 0.3; */
-        /* background-size: cover; */
-        /* background-repeat: no-repeat; */
-        font-size: 15px;
-        font-family: 'Source Sans Pro', sans-serif;;
-    }
+    
     
     .actorsInput{
         font-family: 'Source Sans Pro', sans-serif;
-        border-radius:10px ;
+        border-radius:5px ;
         border-left: 2px solid white;
         border-right: 2px solid gray ;
         border-top: 2px solid gray;
@@ -82,7 +143,6 @@ body {
         width: 80%;
         margin-top: 20px;
         margin-bottom: 20px;
-        /* border: 2px solid black; */
     }
     .actorDescription{
         font-family: 'Source Sans Pro', sans-serif;
@@ -91,17 +151,16 @@ body {
         border-right: 2px solid gray ;
         border-top: 2px solid gray;
         border-bottom: 2px solid  white;
-     border-radius:15px ;
-    padding: 10px;
-     max-width: 80%;
-     min-width: 80%;
-     max-height: 80px;
-     min-height: 80px;
-     overflow: auto;
-     background: white;
-     
-     
+        border-radius:5px ;
+        padding: 10px;
+        max-width: 80%;
+        min-width: 80%;
+        max-height: 80px;
+        min-height: 80px;
+        overflow: auto;
+        background: white;
   }
+  
   textarea:focus{
     -webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.45);
     -moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.45);
@@ -117,9 +176,9 @@ body {
     .showActors{
         background: rgba(187, 223, 243, 0.93);
         border-left: 2px solid white;
-    border-right: 2px solid gray ;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid  white;
+        border-right: 2px solid gray ;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid  white;
         margin: auto;
         width: 85%;
         margin-bottom: 5%;
@@ -136,31 +195,6 @@ body {
     border-bottom: 2px solid white;
 }
 
-  
-   #submit_btn{
-      border-radius:5px;
-      background:rgb(115, 168, 247);
-      color: white;
-      height: 35px;
-      width: 30%;
-      margin: 5%;
-  }
-
-
-.userStoryContainer{
-    margin: auto;
-    margin-top: 5%;
-    border-left: 2px solid white;
-    border-right: 2px solid gray;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid white;
-    background:url(https://66.media.tumblr.com/3966b51da2d941f0c01a907f190ebcb9/tumblr_nqx8hsjuCl1tubinno1_1280.jpg);
-    font-size: 15px;
-    font-family: 'Source Sans Pro', sans-serif;
-    min-height: 720px;
-    width: 60%;
-    font-size: 15px;
-}
 
 .addUserStory{
     margin: 5px;
@@ -217,9 +251,9 @@ body {
     border: 2px solid rgb(115, 168, 247); */
     background: rgba(187, 223, 243, 0.93);
     border-left: 2px solid white;
-border-right: 2px solid gray ;
-border-top: 2px solid gray;
-border-bottom: 2px solid  white;
+    border-right: 2px solid gray ;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid  white;
     margin: auto;
     width: 85%;
     margin-bottom: 5%;
@@ -228,11 +262,7 @@ border-bottom: 2px solid  white;
     border-radius:10px;
 }
 
-  .footer{
-      /* height: 10%; */
-      /* background-color: rgb(115, 168, 247); */
-     
-  }
+
 
 
  
