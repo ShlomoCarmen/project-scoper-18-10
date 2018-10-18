@@ -38,10 +38,10 @@ class PDFpreview extends Component {
 
                 <div className="imgDiv">
                     {imgLinks.map((img, i)=>{
-                        return <img src={img} alt=""/>
+                        return <img key={i} src={img} alt=""/>
                     })}
                 </div>
-                <p> <p className="pdfOverview"><b> Project</b></p> {this.props.projectDescription}</p>
+                <p className="pdfOverview"><b> Project</b></p> {this.props.projectDescription}
                 <div><p className="pdfOverview"><b>The Actors/Users:</b> </p>{this.props.actorsArray.map((elm, i) => {
                     return <div key={i}>
                         <p>{i + 1 + "."} <ins> {elm.actorName} </ins> <br /> {elm.actorDescription} </p>
@@ -49,7 +49,7 @@ class PDFpreview extends Component {
                 })}</div>
                 <div> <p className="pdfOverview"><b>Requirements/User Stories:</b> </p>
                     {this.props.actorsArray.map((elm, i) => {
-                        return <div><br/><ins>{elm.actorName + " new user stories"}</ins><br /><br />
+                        return <div key={i}><br/><ins>{elm.actorName + " new user stories"}</ins><br /><br />
                             {elm.userStoreis.map((story, i) => {
                                 return <div key={i}> {i + 1}.   {story}<br /></div>
                             })}
