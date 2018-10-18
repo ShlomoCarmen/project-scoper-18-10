@@ -12,10 +12,13 @@ class RichEditor extends React.Component {
 
     if (this.props.projectDescription === ''){
         this.state = {editorState:EditorState.createEmpty()};
+        console.log(rawJsText);
       }else{
         
         const content  = convertFromRaw(JSON.parse(rawJsText));
         this.state = {editorState:EditorState.createWithContent(content)};
+        console.log(rawJsText);
+        
     }
 
 
@@ -77,29 +80,34 @@ class RichEditor extends React.Component {
     
     return (
         <div className="RichEditor-root">
+        {this.props.editMode ? 
         <BlockStyleControls
-          editorState={editorState}
-          onToggle={this.toggleBlockType}
-        />
+        editorState={editorState}
+        onToggle={this.toggleBlockType}
+        /> : null }
+        {this.props.editMode ? 
         <InlineStyleControls
-          editorState={editorState}
-          onToggle={this.toggleInlineStyle}
-        />
+        editorState={editorState}
+        onToggle={this.toggleInlineStyle}
+        /> : null }
         <div className={className} onClick={this.focus}>
           <Editor
-            blockStyleFn={getBlockStyle}
-            customStyleMap={styleMap}
-            editorState={editorState}
-            handleKeyCommand={this.handleKeyCommand}
-            onChange={this.onChange}
-            onTab={this.onTab}
-            ref="editor"
-            spellCheck={true}
-            placeholder="Tell a story..."
-                        
+          
+          blockStyleFn={getBlockStyle}
+          customStyleMap={styleMap}
+          editorState={editorState}
+          handleKeyCommand={this.handleKeyCommand}
+          onChange={this.onChange}
+          onTab={this.onTab}
+          ref="editor"
+          spellCheck={true}
+          placeholder="Describe the project..."
+          
           />
         </div>
+          {this.props.editMode ? 
         <button className="saveBtn" onClick={() => store.dispatch({ type: 'PROJECT_DESCREPTION', payload: JSON.stringify(raw) })}>Save</button>
+        : null }
       </div>
     );
   }

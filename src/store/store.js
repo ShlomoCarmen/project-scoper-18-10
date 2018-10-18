@@ -9,6 +9,7 @@ var mainState = {
     projectsArray: [],
     correctProject: '',
     projectDescription: '',
+    assumptions: [],
     actorsArray: []
 }
 
@@ -78,6 +79,8 @@ var reduser = function (state, action) {
         case "UPDATE_STATE":
             newState.projectDescription = action.payload.projectDescription;
             newState.actorsArray = action.payload.allActors;
+            newState.assumptions = action.payload.assumptions;
+
             console.log(action.payload);
             
             return newState;
