@@ -52,7 +52,7 @@ class PDFpreview extends Component {
                     QA. With over 70 developers, all of which are excelled Talmudic college alumni, RavTech adds <br />
                     a unique value to its clients. This endeavor was launched by the Ultra-Orthodox community <br />
                     itself and is co-managed by some of Israel’s top high-tech personas. ​​<br /><br />
-                    Our clients' portfolio includes multi-national companies such as Check Point, EMC, HP, City Bank <br />
+                    Our clients portfolio includes multi-national companies such as Check Point, EMC, HP, City Bank <br />
                     and so on, as well as many early and late-stage startups. <br /><br />
                     We offer our customers a long-lasting partnership along with professional peace of mind <br />
                     throughout the entire software development life-cycle.<br /><br />
