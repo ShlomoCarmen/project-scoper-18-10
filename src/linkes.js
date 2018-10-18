@@ -12,8 +12,8 @@ export const pageLinkes = {
     // drow_io: '/drow.io',
 }
 
-const mainURL = "http://10.2.1.119:3000";
-// const mainURL = "http://10.2.1.103:3000";
+// const mainURL = "http://10.2.1.119:3000";
+const mainURL = "http://10.2.1.103:3000";
 // const mainURL = "http://10.2.1.106:3000";
 export const urlLinks = {
     sendActor: mainURL + '/actor',
@@ -22,6 +22,7 @@ export const urlLinks = {
     editActor: mainURL + '/editActor',
     getProjects: mainURL + '/allProjects',
     deleteUserStory: mainURL + '/userStoreis',
+    createNewProject: mainURL + '/createNewProject',
 }
 
 

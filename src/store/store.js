@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import { sendActor, getActors, getAllData, deleteActor, getProjects, rejectionExplenation, createNewVersion, projectDescription, sendUserStory, editActor ,deleteUserStory} from '../axios/axios'
+import { sendActor, getActors, getAllData, deleteActor, getProjects, rejectionExplenation, createNewPrject, createNewVersion, projectDescription, sendUserStory, editActor ,deleteUserStory} from '../axios/axios'
 
 
 var mainState = {
@@ -15,15 +15,20 @@ var mainState = {
 var reduser = function (state, action) {
     var newState = { ...state };
     switch (action.type) {
+        case "CREATE_NEW_PROJECT":
+            createNewPrject(newState.correctProject, action.payload);
+            return newState
+            break;
+        case "CREATE_NEW_VERSION":
+            createNewVersion(newState.correctProject, action.payload);
+            return newState
+            break;
+            
         case "REJECTION_EXPLENATION":
             rejectionExplenation(newState.correctProject, action.payload);
             return newState
             break;
 
-        case "CREATE_NEW_VERSION":
-            createNewVersion(newState.correctProject, action.payload);
-            return newState
-            break;
 
         case "STATE_HAS_UPDATE":
             newState.controler.updateFirst = false;

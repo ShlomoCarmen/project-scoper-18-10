@@ -28,7 +28,6 @@ class AddActors extends Component {
         });
     }
     editActor = () => {
-        // console.log(this.state);
         store.dispatch({
             type: "EDIT_ACTOR", payload: {
                 editActorIndex: this.state.editActorIndex,
@@ -41,6 +40,11 @@ class AddActors extends Component {
             handleActorInput: '',
             handleActorDescriprionInput: ''
         });
+    }
+
+    saveBtn = () =>{
+        var inputEmpty = this.state.handleActorInput === '' || this.state.handleActorDescriprionInput === '';
+       return <button className={inputEmpty ? 'disableBtn': 'saveBtn'} onClick={this.saveData}>Add</button>
     }
     
     render() {
@@ -61,11 +65,9 @@ class AddActors extends Component {
                     }}
                 />
                 <br />
-                {this.state.editMonde ? null : <button className='saveBtn' onClick={this.saveData}>Add</button>}
+                {this.state.editMonde ? null : this.saveBtn()}
                 {this.state.editMonde ? <button className='editBtn' onClick={this.editActor}>Edit</button> : null}
-                {/* <button id="submit_btn" onClick={this.saveData}>Add</button> */}
                 <div className='showActors'>
-                    
                     {this.props.actorsArray.map((elm, index) => {
                         return <div id='actorView' key={index}>
                         <div className='details'>       
@@ -81,9 +83,6 @@ class AddActors extends Component {
                                     handleActorInput: elm.actorName,
                                     handleActorDescriprionInput: elm.actorDescription
                                 })
-                                
-                                
-                                {/* this.props.dispatch({type: 'EDIT_ACTOR', payload: i}) */}
                                 }}>✎</div>
                                 </div>
                                

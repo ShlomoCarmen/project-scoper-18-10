@@ -5,16 +5,23 @@ import {urlLinks} from '../linkes.js'
 
 export var rejectionExplenation = (correctProject, rejectionExplenation) => {
     console.log(rejectionExplenation);
-    
     axios.put(`rejection/${correctProject}`, {rejectionExplenation})
     .then(function (res) {
         console.log(res);
     });
 }
+export var createNewPrject = (correctProject, state) => {
+    axios.post(urlLinks.createNewProject, { projectName: state.projectName, editorName: state.editorName })
+    .then(function (response) {
+        console.log(response);
+        store.dispatch({ type: 'GET_PROJECTS_DB' });
+    });
+   
+}
 export var createNewVersion = (correctProject, editorName) => {
     console.log(editorName);
     
-    axios.put(`newVersion/${correctProject}`, {editorName})
+    axios.put(`/newVersion/${correctProject}`, {editorName})
     .then(function (res) {
         // store.dispatch({type: 'GET_ACTORS_DB'});
         console.log(res);
