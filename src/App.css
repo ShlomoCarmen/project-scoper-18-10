@@ -1,0 +1,370 @@
+.icon{
+    cursor: pointer;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    display: none;
+    text-align: center;
+}
+.btn_edit:hover{
+    background: rgba(185, 223, 149, 0.753);
+}
+.btn_delete:hover{
+    background: rgba(236, 151, 151, 0.753);
+}
+.iconDiv{
+    flex: 1;
+    display: flex;
+}
+.details{
+    flex: 6;
+    overflow: auto;
+    text-align: left;
+}
+
+.singleUserStory:hover .icon{
+    display: block;
+}
+/* 
+.divBorder{
+    
+} */
+.divShade{
+    -webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+      -moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+      box-shadow:         0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+}
+
+.maincContainer{
+    margin: 0px;
+    padding: 15px;
+    /* background:url(data:image/jpeg;base64,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); */
+    background:url(https://wallpaper-house.com/data/out/7/wallpaper2you_167350.jpg);
+    opacity: 0.6;
+    background-size: cover;
+}
+
+.pdfPreview{
+    background: white;
+    /* border-left: 2px solid white; */
+    /* border-right: 2px solid gray; */
+    border-top: 2px solid gray;
+    /* border-bottom: 2px solid white; */
+    border-radius: 10px;
+    width: 80%;
+    /* height: 200px; */
+    margin: auto;
+    padding: 10%;
+    font-size: 15px;
+    text-align: left;
+    opacity: 2;
+}
+
+.pdfPreviewTitel{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.pdfOverview{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+img{
+    width: 150px;
+    height: 60px;
+    margin: 20px;
+}
+
+.imgDiv{
+    width: 80%;
+    margin: auto;
+    /* padding: 20px; */
+}
+
+.header{
+    height: 50px;
+    padding: 5px;
+    font-weight: bold;
+    color: rgb(199, 209, 219);
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* font-size: 25px; */
+    /* font-weight: bold; */
+}
+
+.articleFirst{
+    text-transform: uppercase;
+    background: -moz-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: -webkit-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: -o-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: -ms-linear-gradient(47deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+    background: linear-gradient(137deg, rgb(42, 95, 190) 30%, rgb(90, 140, 250) 69%);
+}
+
+.navBar {
+    padding: 2%;
+    text-align: center;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: #89ceee;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navBar a:hover {
+    text-decoration: none;
+    background-color: rgba(221, 221, 221, 0.24);
+    color: rgb(197, 184, 184);
+}
+
+.articleSecond{
+    text-align: center;
+    height: 700px;
+    border-bottom: 5px rgb(224, 221, 221) solid;
+    overflow: auto;
+}
+.mainScreen{
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.footer{
+    height: 80px;
+}
+
+
+
+
+
+
+/* ////////////////////////////////////// */
+/* buttons */
+
+.saveBtn{
+    border-radius:5px;
+    background:rgb(115, 168, 247);
+    color: white;
+    height: 35px;
+    width: 30%;
+    margin: 20px;
+}
+
+.editBtn{
+    border-radius:5px;
+    background:rgb(122, 226, 122);
+    color: white;
+    height: 35px;
+    width: 30%;
+    margin: 20px;
+}
+
+.deleteBtn{
+    border-radius:5px;
+    background:rgb(255, 107, 107);
+    color: white;
+    height: 35px;
+    width: 30%;
+    margin: 20px;
+}
+
+/* ////////////////////////////////////// */
+/* form */
+
+.formContainer{
+    padding: 10px;
+    min-height: 400px;
+    width: 60%;
+    margin: auto;
+    /* border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid white; */
+    background: rgba(143, 205, 241, 0.418);
+    /* opacity: 0.3; */
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;;
+}
+
+.description:hover .icon{
+    display: block;
+}
+
+
+.projectDescreptionInput{
+    border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    width: 80%;
+    height: 200px;
+    margin: 20px;
+    padding: 15px;
+    font-size: 15px;
+}
+
+
+.actorsInput{
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius:5px ;
+    border-left: 2px solid white;
+    border-right: 2px solid gray ;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid  white;
+    padding: 2px;
+    padding-left: 10px;
+    height: 35px;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.actorDescription{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    border-left: 2px solid white;
+    border-right: 2px solid gray ;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid  white;
+    border-radius:5px ;
+        padding: 10px;
+        max-width: 80%;
+        min-width: 80%;
+        max-height: 80px;
+        min-height: 80px;
+        overflow: auto;
+        background: white;
+  }
+  
+  textarea:focus{
+      -webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+      -moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+      box-shadow:         0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+    }
+    
+    input:focus{
+        -webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+        -moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+        box-shadow:         0px 7px 11px 0px rgba(50, 50, 50, 0.45);
+    }
+    
+    .showActors{
+        background: rgba(187, 223, 243, 0.93);
+        border-left: 2px solid white;
+        border-right: 2px solid gray ;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid  white;
+        margin: auto;
+        width: 85%;
+        margin-bottom: 5%;
+        height: 200px;
+        overflow: auto;
+        border-radius:10px;
+    }
+    
+    #actorView{
+        margin: auto;
+        width: 90%;
+        padding: 5px;
+        text-align: left;
+        border-bottom: 2px solid white;
+        display: flex;
+    }
+    #actorView:hover {
+        background: #83888a48;
+        border-radius: 5px;
+    }
+    #actorView:hover .icon{
+        display: block;
+    }
+
+     
+    
+.addUserStory{
+    margin: 5px;
+    margin: auto;
+    width: 80%;
+    /* margin-top: 5%; */
+    /* border: 2px solid #a3c9fa; */
+    /* border-radius: 10px; */
+    /* background:#a3c9fa ; */
+}
+.addUserStory .addUserStoryActor{
+    
+    margin: auto;
+    border: 1px solid gray;
+    background: white;
+    border-radius:5px ;
+    padding: 2px;
+    padding-left: 10px;
+    height: 35px;
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.addUserStory .SingleUserStory{
+    /* border: 2px solid black;  */
+    border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid white;
+    
+    margin: auto;
+    border-radius:15px ;
+    padding: 10px;
+     max-width: 80%;
+     min-width: 80%;
+     max-height: 80px;
+     min-height: 80px;
+     overflow: auto;
+     /* background: rgb(217, 233, 189); */
+     
+    }
+    
+    .addUserStory .viewUserStory{
+        /* margin: auto;
+        background: rgb(225, 240, 200);
+        border-radius:10px ;
+        padding: 2px;
+        padding-left: 10px;
+        height: 35px;
+        width: 80%;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    border: 2px solid rgb(115, 168, 247); */
+    background: rgba(187, 223, 243, 0.93);
+    border-left: 2px solid white;
+    border-right: 2px solid gray ;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid  white;
+    margin: auto;
+    width: 85%;
+    margin-bottom: 5%;
+    height: auto;
+    overflow: auto;
+    border-radius:10px;
+    max-height: 200px;
+}
+
+.singleUserStory{
+    margin: auto;
+    width: 90%;
+    padding: 5px;
+    border-bottom: 2px solid white;
+    display: flex;
+    font-size: 15px;
+}
+.singleUserStory:hover {
+    background: rgba(184, 180, 180, 0.363);
+
+}
+
+
+
+
+ 
+
