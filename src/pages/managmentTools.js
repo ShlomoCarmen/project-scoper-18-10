@@ -47,26 +47,26 @@ class CreateNewProject extends Component {
         }
     }
 
-
-    createNewProject = (state) => {
-        axios.post('http://10.2.1.103:3000/createNewProject', { projectName: state.projectName, editorName: state.editorName })
-            .then(function (response) {
-                console.log(response);
-                store.dispatch({ type: 'GET_PROJECTS_DB' });
-            });
+    saveBtn = () =>{
+        var inputEmpty = this.state.projectName === '' || this.state.editorName === '';
+       return <button className={inputEmpty ? 'disableBtn': 'saveBtn'} onClick={() => {
+           store.dispatch({type: 'CREATE_NEW_PROJECT', payload: this.state})
+            {/* this.createNewProject(this.state) */}
+            this.setState({ projectName: "",editorName: "",})
+            }}><Link to='/scoping' >Create New Project</Link></button>
     }
     render() {
         return (
             <div className='newProject'>
 
-                <input type="text" placeholder='ProjectName' onChange={(e) => {
+                <input type="text" placeholder='ProjectName' value={this.state.projectName} onChange={(e) => {
                     this.setState({ projectName: e.target.value })
                 }} />
-                <input type="text" placeholder='Editor name' onChange={(e) => {
+                <input type="text" placeholder='Editor name' value={this.state.editorName} onChange={(e) => {
                     this.setState({ editorName: e.target.value })
                 }} />
-
-                <button onClick={() => { this.createNewProject(this.state) }}><Link to='/scoping' >Create New Project</Link></button>
+                <br/>
+                {this.saveBtn()}
             </div>
         );
     }
@@ -119,7 +119,7 @@ class CreateNewVersion extends Component {
                         <textarea cols="30" rows="10" placeholder='Rejection explenation' onChange={e => { this.setState({ rejectionExplenation: e.target.value }) }}></textarea>
                         <br />
                         <button onClick={this.props.cancelNewVersionMode}>Cancel</button>
-                        <button onClick={() => {
+                        <button className={this.state.rejectionExplenation  === '' ? 'disableBtn': 'saveBtn'} onClick={() => {
                             this.setState({ rejectionStatus: false, editorNameStatus: true })
                             store.dispatch({ type: 'REJECTION_EXPLENATION', payload: this.state.rejectionExplenation })
                         }}>Save rejection explenation</button>
@@ -128,7 +128,11 @@ class CreateNewVersion extends Component {
                 {
                     this.state.editorNameStatus ? <div>
                         <input type="text" placeholder='Editor name' onChange={e => { this.setState({ editorName: e.target.value }) }} />
-                        <button onClick={() => store.dispatch({ type: 'CREATE_NEW_VERSION', payload: this.state.editorName })}><Link to='/scoping' >Create New Version</Link></button>
+                        <button className={this.state.editorName === '' ? 'disableBtn': 'saveBtn'} onClick={() => {
+                            this.props.cancelNewVersionMode()
+                            this.setState({editorNameStatus: false })
+                            store.dispatch({ type: 'CREATE_NEW_VERSION', payload: this.state.editorName })
+                            }}><Link to='/scoping' >Create New Version</Link></button>
                     </div>
                         : null}
             </div>

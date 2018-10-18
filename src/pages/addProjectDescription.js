@@ -26,7 +26,6 @@ class AddProjectDescription extends Component {
           this.setState({editMode: false})
           store.dispatch({ type: 'PROJECT_DESCREPTION', payload: this.state.projectDescription })}}>Save</button> : null} */}
           <RichEditor editMode={true}/>
-        
       </div>
     );
 
