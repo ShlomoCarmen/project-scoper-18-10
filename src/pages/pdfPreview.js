@@ -4,7 +4,10 @@ import { connect } from 'react-redux'
 import store from '../store/store.js';
 import axios from 'axios';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import {imgLinks} from '../linkes.js'
+import { imgLinks } from '../linkes.js';
+import RichEditor from '../richEditor/richEditor.js'
+import '../richEditor/richEditor.css';
+
 
 
 class PDFpreview extends Component {
@@ -13,8 +16,8 @@ class PDFpreview extends Component {
         return (
             <div className="pdfPreview">
                 <div className="mainBlbBla">
-                    <h3 className="pdfPreviewTitel"><b> Offer for Development of Disk In Pro <br/> NEAR phase 2 web app </b></h3><br />
-                    <b className="pdfOverview"> Overview</b> <br/><br/>
+                    <h3 className="pdfPreviewTitel"><b> Offer for Development of Disk In Pro <br /> NEAR phase 2 web app </b></h3><br />
+                    <b className="pdfOverview"> Overview</b> <br /><br />
                     Founded 5 years ago in Bnei Brak, RavTech is a one-of-a-kind software house, providing a <br />
                     wide range of software services and specializing in Mobile, Web sites, IoT and Automation <br />
                     QA. With over 70 developers, all of which are excelled Talmudic college alumni, RavTech adds <br />
@@ -37,6 +40,8 @@ class PDFpreview extends Component {
                 </div>
 
                 <div className="imgDiv">
+
+                <p> <p className="pdfOverview"><b> Project</b></p><RichEditor editMode={false} /></p>
                     {imgLinks.map((img, i)=>{
                         return <img key={i} src={img} alt=""/>
                     })}
@@ -44,16 +49,33 @@ class PDFpreview extends Component {
                 <p className="pdfOverview"><b> Project</b></p> {this.props.projectDescription}
                 <div><p className="pdfOverview"><b>The Actors/Users:</b> </p>{this.props.actorsArray.map((elm, i) => {
                     return <div key={i}>
-                        <p>{i + 1 + "."} <ins> {elm.actorName} </ins> <br /> {elm.actorDescription} </p>
+                    <ol>
+                        <li> <ins> {elm.actorName} </ins> <br /> {elm.actorDescription} </li>
+                    </ol>
                     </div>
                 })}</div>
                 <div> <p className="pdfOverview"><b>Requirements/User Stories:</b> </p>
                     {this.props.actorsArray.map((elm, i) => {
                         return <div key={i}><br/><ins>{elm.actorName + " new user stories"}</ins><br /><br />
                             {elm.userStoreis.map((story, i) => {
-                                return <div key={i}> {i + 1}.   {story}<br /></div>
+                                return <div key={i}>
+                                <ol>
+                                    <li>{story}</li>
+                                </ol>
+                                 </div>
                             })}
                         </div>
+                    })}
+                </div><br /><br />
+                <div>
+                    <p className="pdfOverview"><b> Assumptions</b></p> <br />
+
+                    {this.props.assumptions.map((elm, i) => {
+                        return <div key={i}>
+                            <ul>
+                                <li> {elm} </li>
+                            </ul> 
+                             </div>
                     })}
                 </div>
             </div>
